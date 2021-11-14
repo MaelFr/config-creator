@@ -15,7 +15,7 @@ const Home: NextPage = () => {
     var reader = new FileReader();
     reader.onload = (event) => {
       // console.log(JSON.parse(event.target?.result));
-      setDiscovery(JSON.parse(event.target?.result));
+      setDiscovery(JSON.parse(event.target?.result as string));
     };
     reader.readAsText(e.target.files[0]);
   }, []);
