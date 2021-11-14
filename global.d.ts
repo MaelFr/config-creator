@@ -41,13 +41,16 @@ type Category =
   | "multimedia"
   | "default";
 
+interface Command {
+  use: CommandName;
+  params?: string;
+  execAtCreation?: "Yes";
+  isHistorized?: 1;
+  isVisible?: 1;
+}
+
 interface Commands {
-  [commandName: string]: {
-    use: string;
-    params?: string;
-    execAtCreation?: boolean;
-    isHistorized?: boolean;
-  };
+  [commandName: string]: Command;
 }
 
 interface Config {

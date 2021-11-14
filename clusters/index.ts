@@ -1,8 +1,8 @@
 function addCommand(
   commands: Commands,
   cmdName: string,
-  cmdUse: string,
-  options?: any
+  cmdUse: CommandName,
+  options?: Omit<Command, "use">
 ) {
   if (commands[cmdName]) {
     throw Error(
